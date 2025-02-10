@@ -1,0 +1,14 @@
+name: Lint_Black
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: psf/black@stable
+        with:
+          use_pyproject: true
+      - name: Run Black
+        run: black --check
